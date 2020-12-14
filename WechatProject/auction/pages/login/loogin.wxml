@@ -1,0 +1,22 @@
+<!--pages/login/loogin.wxml-->
+
+<view>当前用户名：{{ username }}</view>
+<view>当前头像：<image src="{{ path }}" style="width: 75rpx; height:75rpx;"></image></view>
+<!-- 微信官方目前不推荐使用这种方式 -->
+<!-- <button bindtap="GetUserInfo">获取用户信息</button> -->
+
+<!-- 推荐用微信已实现的API实现 -->
+<!-- 其中 open-type="getUserInfo", bindgetuserinfo="xxx"都是固定写法 -->
+<button open-type="getUserInfo" bindgetuserinfo="fetchInfo">获取用户信息</button>
+<!-- 获取用户位置信息 -->
+<view bindtap="getLocalPath">{{ localPath }}</view>
+
+<view>for指令</view>
+<!-- for指令也就是for循环，等价于 for index, item in dataList -->
+<view wx:for="{{dataList}}"> {{index}} - {{item}}</view>
+<!-- 当然index和item也是可以改的 -->
+<view wx:for="{{dataList}}" wx:for-index="idx" wx:for-item="value"> {{idx}} - {{value}}</view>
+<!-- 字典稍有不同 index表示键，item表示值-->
+<!-- 也可以直接获取 -->
+<view> {{dataDict.name}} - {{dataDict.age}}</view>
+<view wx:for="{{dataDict}}"> {{index}} - {{item}}</view>

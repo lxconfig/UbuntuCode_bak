@@ -1,0 +1,39 @@
+/* pages/autions/auctions.wxss */
+
+.auction .title {
+	font-size: 50rpx;
+	font-weight: 600;
+ }
+ 
+ .auction .tips {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+ }
+ 
+ .auction .tips text {
+	font-size: 30rpx;
+	color: #8c8c8c;
+ }
+ 
+ .auction .big_image {
+	height: 400rpx;
+	overflow: hidden;
+ }
+ 
+ .auction .big_image image {
+	height: 100%;
+	width: 100%;
+ }
+ 
+ .auction .small_image {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+ }
+ 
+ .auction .small_image image {
+	height: 100rpx;
+	width: 100rpx;
+	padding-right: 10rpx;
+ }

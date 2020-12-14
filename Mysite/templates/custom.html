@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap-4.5.0/dist/css/bootstrap.css">
+</head>
+<body>
+    <h3>用户信息分页显示</h3>
+    <ul>
+        {% for item in user_list %}
+            <li>{{ item.nid }}  {{ item.user }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- {{ page_info.pager | safe}} -->
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {{ page_info.pager | safe}}
+        </ul>
+      </nav>
+
+</body>
+</html>

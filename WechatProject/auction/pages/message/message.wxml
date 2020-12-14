@@ -1,0 +1,45 @@
+<!--pages/message/message.wxml-->
+<view>
+	<view class="top_bar">
+		<view class="items">
+			<image src="/static/index/ic_menu_choice_nor.png"></image>
+			<text>赞和收藏</text>
+		</view>
+		<view class="items">
+			<image src="/static/index/ic_menu_choice_nor.png"></image>
+			<text>最近来访</text>
+		</view>
+		<view class="items">
+			<image src="/static/index/ic_menu_choice_nor.png"></image>
+			<text>评论和@</text>
+		</view>
+	</view>
+	<view class="msg">
+		<view class="item">
+			<image src="/static/index/ic_menu_choice_nor.png"></image>
+		</view>
+		<view class="items">
+			<view class="title">
+				<text>系统消息</text>
+				<text>2020-01-01</text>
+			</view>
+			<view class="desc">
+				<text>消息惺惺惜惺惺惺惺惜惺惺惺惺惜惺惺惜惺惺消息</text>
+			</view>
+		</view>
+	</view>
+	<view class="msg">
+		<view class="item">
+			<image src="/static/index/ic_menu_choice_nor.png"></image>
+		</view>
+		<view class="items">
+			<view class="title">
+				<text>系统消息</text>
+				<text>2020-01-01</text>
+			</view>
+			<view class="desc">
+				<text>消息惺惺惜惺惺惺惺惜惺惺惺惺惜惺惺惜惺惺消息</text>
+			</view>
+		</view>
+	</view>
+</view>

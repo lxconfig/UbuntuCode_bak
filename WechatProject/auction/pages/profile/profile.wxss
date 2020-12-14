@@ -1,0 +1,65 @@
+/* pages/profile/profile.wxss */
+.top {
+	background-color: seagreen;
+}
+.top text {
+	color: white;
+}
+.myInfo {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.myInfo .avatar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.myInfo .me {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.top .myInfo .avatar image {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+}
+.info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.info .item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.car {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 20rpx;
+}
+.car .item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.car .item image {
+	height: 80rpx;
+	width: 80rpx;
+}
+.money {
+	height: 200rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: space-around;
+	padding-top: 20rpx;
+}
+.money .wallet {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 20rpx;
+}

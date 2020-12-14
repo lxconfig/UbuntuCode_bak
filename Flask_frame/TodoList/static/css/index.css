@@ -1,0 +1,65 @@
+td {
+    height: 50px;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+.black_overlay{ 
+    margin: 0 auto;
+    display: none; /* 此元素不会被显示*/
+    position: absolute; 
+    top: 0%; 
+    left: 120px; 
+    right: 120px;
+    width: 100%; 
+    height: 250%; 
+    background-color: black; 
+    z-index:1001; /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+    -moz-opacity: 0.8; 
+    opacity:.30; /* opacity 属性设置元素的不透明级别。*/
+    filter: alpha(opacity=30);  
+    /* 所有浏览器都支持 opacity 属性。   注释：IE8 以及更早的版本支持替代的 filter 属性。例如：filter:Alpha(opacity=50)。*/
+} 
+.white_content {
+    display: none; 
+    position: absolute; 
+    top: 15%; 
+    left: 20%; 
+    width: 80%; 
+    height: 200%; 
+    padding: 10px; 
+    /* border: 10px solid orange;  */
+    background-color: white; 
+    z-index:1002; 
+    overflow: auto; 
+} 
+
+.form-signin{
+    max-width: 300px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-events{
+    max-width: 300px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading .form-events,
+  .form-signin .checkbox .form-events{
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox .form-events{
+    font-weight: normal;
+  }
+  .form-signin .form-control .form-events{
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus .form-events{
+    z-index: 2;
+  }

@@ -1,0 +1,83 @@
+/* pages/index.wxss */
+
+.c1 {
+   color: red; 
+}
+
+.menu-1 image {
+   height: 100rpx;
+   width:  100rpx;
+   border-radius: 50rpx;
+}
+.menu-2 image {
+   height: 100rpx;
+   width:  100rpx;
+   border-radius: 50rpx;
+}
+.menu-1{
+   display: flex;
+   /* 设定主轴的方向  
+      row 表示水平方向
+      column 表示垂直方向
+   */
+   flex-direction: row;  
+   /* 设定元素在主轴(水平)上的排列方式
+      flex-start 表示居左
+      flex-end 表示居右
+      space-around 表示平均分
+      space-between 表示两端靠边界，其他平均分
+   */
+   justify-content: space-around;
+}
+
+.menu-2 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.menu-2 .item {
+   display: flex;
+   flex-direction: column;
+   /* 设定元素在副轴上的排列方式
+   */
+   align-items: center;
+}
+
+.auction .title {
+   font-size: 50rpx;
+   font-weight: 600;
+}
+
+.auction .tips {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.auction .tips text {
+   font-size: 30rpx;
+   color: #8c8c8c;
+}
+
+.auction .big_image {
+   height: 400rpx;
+   overflow: hidden;
+}
+
+.auction .big_image image {
+   height: 100%;
+   width: 100%;
+}
+
+.auction .small_image {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
+.auction .small_image image {
+   height: 100rpx;
+   width: 100rpx;
+   padding-right: 10rpx;
+}

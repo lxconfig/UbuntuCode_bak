@@ -1,0 +1,10 @@
+<!--pages/telephone/telephone.wxml-->
+<!-- 登录 -->
+<view>手机号：{{phone}}</view>
+<!-- bindinput 会在每次输入时调用 -->
+<input value="{{phone}}" bindinput="bindPhone" placeholder="请输入手机号"></input>
+<view>验证码：
+	<view bindtap="Message">点击获取验证码</view> 
+</view>
+<input value="{{code}}" bindinput="bindCode" placeholder="请输入验证码"></input>
+<button bindtap="login">登录</button>

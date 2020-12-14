@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>编号</td>
+                <td>性别</td>
+                <td>班级</td>
+                <td>姓名</td>
+            </tr>
+        </thead>
+        {% for info in infos %}
+            <tr>
+                <td>{{ info.sid }}</td>
+                <td>{{ info.gender }}</td>
+                <td>{{ info.class_id }}</td>
+                <td>{{ info.sname }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {{lists.2}}
+</body>
+</html>

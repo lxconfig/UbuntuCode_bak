@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'user_header.html' %}
+    <h3>有关系的异性列表</h3>
+    <ul>
+        {% for row in user_list %}
+            {% if row.male__nickname %}
+                <li>{{ row.male__nickname }}</li>
+            {% else %}
+                <li>{{ row.fmale__nickname }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* pages/message/message.wxss */
+.top_bar {
+	height: 300rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.top_bar .items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
+.top_bar .items image {
+	height: 75rpx;
+	width: 75rpx;
+}
+.top_bar .items text {
+	font-size: 30rpx;
+}
+.msg {
+	display: flex;
+	flex-direction: row;
+	padding-top: 15rpx;
+}
+.msg .item image {
+	height: 75rpx;
+	width: 75rpx;
+	border-radius: 50%;
+}
+.msg .items {
+	display: flex;
+	flex-direction: column;
+}
+.msg .items .title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.msg .items .desc text {
+	font-size: 30rpx;
+	color: #8c8c8c;
+}

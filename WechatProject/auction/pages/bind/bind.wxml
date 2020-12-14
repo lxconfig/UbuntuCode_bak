@@ -1,0 +1,11 @@
+<!--pages/bind/bind.wxml-->
+
+<text>数据绑定</text>
+
+<view>数据1： {{ message }}</view>
+<view>数据2： {{ name }}</view>
+<button bindtap="edit">修改数据</button>
+
+<view>当前用户名：{{ username }}</view>
+<view>当前头像：<image src="{{ path }}" style="width: 75rpx; height:75rpx;"></image></view>
+<button bindtap="GetUserInfo">获取用户信息</button>

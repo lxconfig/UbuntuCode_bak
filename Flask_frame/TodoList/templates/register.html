@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    注册
+{% endblock title %}
+
+
+{% block styles %}
+    {{ super() }}
+    <link href="/static/css/signin.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block metas %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {{ super() }}
+{% endblock metas %}
+
+{% block body %}
+    {{ super() }}
+    <div class="container">
+        <form class="form-signin">
+          <h2 class="form-signin-heading">欢迎注册TodoList</h2>
+          <label for="inputUsername" class="sr-only">用户名</label>
+          <input type="text" id="username" name="username" class="form-control" placeholder="用户名" required autofocus>
+          <label for="inputMobile" class="sr-only">手机号</label>
+          <input type="text" id="mobile" name="mobile" class="form-control" placeholder="手机号" required autofocus>
+          <label for="inputEmail" class="sr-only">Email地址</label>
+          <input type="email" id="inputEmail" name="email" class="form-control" placeholder="邮箱地址" required autofocus>
+          <div class="input-group">
+            <input type="text" class="form-control" id="img-code" placeholder="图片验证码" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2">
+                <div class="input-group-addon image-code"><img src="" id="verifyImg" width="95px" height="44px"></div>
+            </span>
+          </div>
+
+          <div class="input-group">
+            <input type="text" class="form-control" id="sms_code" placeholder="短信验证码" aria-describedby="basic-addon2" name="sms_code">
+            <span class="input-group-addon" id="basic-addon2">
+                <a href="javascript:;" onclick="sendSMSCode();" id="sms-code" name="sms-code" required>获取验证码</a>
+            </span>
+          </div>
+
+          <label for="inputPassword" class="sr-only">密码</label>
+          <input type="password" id="password" class="form-control" name="password" placeholder="密码" required>
+
+          <label for="inputPassword2" class="sr-only">重复密码</label>
+          <input type="password" id="password2" class="form-control" name="password2" placeholder="确认密码" required>
+          
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me" name="remember"> 记住我
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
+        </form>
+      </div>
+{% endblock body %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/static/js/register.js"></script>
+{% endblock scripts  %}

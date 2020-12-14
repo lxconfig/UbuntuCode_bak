@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>添加老师</h3>
+    <form method="POST">
+        <p>姓名:<input type="text" name="name" placeholder="老师姓名" /></p>
+        <p>
+            任教班级:<select name="class_id" multiple size="10" style="width: 100px;">
+                {% for class in class_list %}
+                    <option value="{{ class.cid }}">{{ class.caption }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <input type="submit" value="添加" />
+    </form>
+</body>
+</html>

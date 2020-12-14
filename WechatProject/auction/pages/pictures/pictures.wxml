@@ -1,0 +1,6 @@
+<!--pages/pictures/pictures.wxml-->
+<text>上传图片示例</text>
+<view class="container">
+	<image wx:for="{{path}}" src="{{item}}"></image>
+	<button bindtap="UploadPic">点我上传</button>
+</view>

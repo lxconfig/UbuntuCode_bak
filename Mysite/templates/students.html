@@ -1,0 +1,173 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link href="/static/css/modal.css" rel="stylesheet">
+{% endblock css %}
+
+{% block body_content %}
+    <h1>学生信息</h1>
+    <p>
+        <a class="btn btn-outline-primary" href="/show/add_student">添加</a>
+        <a class="btn btn-outline-primary" id="add-modal">对话框添加</a>
+    </p>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>学生姓名</th>
+                <th>所属班级</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        {% for student in students_list %}
+            <tr>
+                <td>{{ student.sid }}</td>
+                <td>{{ student.sname }}</td>
+                <td classID="{{ student.class_id }}">{{ student.caption }}</td>
+                <td>{{ student.gender }}</td>
+                <td>
+                    <a href="/show/edit_student?student_id={{ student.sid }}">编辑</a>
+                    <a href="/show/delete_student?student_id={{ student.sid }}">删除</a>
+                    <!-- 这里写id只能第一行数据弹出对话框，原因不明 -->
+                    <a class="edit-modal">对话框编辑</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div id="shadow" class="shadowss hide"></div>
+    <div id="modal" class="modalss hide">
+        <h3>添加学生</h3>
+        <p>
+            姓名: <input type="text" name="name" id="name" placeholder="姓名" />
+        </p>
+        <p>
+            性别: <select id="gender" name="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </p>
+        <p>
+            所属班级: <select id="class_id" name="class_id">
+                {% for class in class_list %}
+                    <option value="{{ class.cid }}">{{ class.caption }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p><span id="errmsg"></span></p>
+        <input id="modal-add-student" type="button" value="添加" />
+        <input id="cancelAdd" type="button" value="取消" />
+    </div>
+    <div id="editmodal" class="modalss hide">
+        <h3>编辑学生</h3>
+        <p>
+            姓名: <input type="text" name="name" id="edit-name" placeholder="姓名" />
+        </p>
+        <p>
+            <input type="text" name="studentID" id="edit-studentID" hidden />
+        </p>
+        <p>
+            性别: <select id="edit-gender" name="edit-gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </p>
+        <p>
+            所属班级: <select id="edit-class-id" name="edit-class-id">
+                {% for class in class_list %}
+                    <option value="{{ class.cid }}">{{ class.caption }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p><span id="errmsg"></span></p>
+        <input id="modal-edit-student" type="button" value="添加" />
+        <input id="cancelEdit" type="button" value="取消" />
+    </div>
+{% endblock body_content %}
+
+{% block js %}
+    <script src="/static/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#add-modal").click(function () {
+                $("#shadow").removeClass("hide");
+                $("#modal").removeClass("hide");
+            });
+            $("#cancelAdd").click(function () {
+                $("#shadow").addClass("hide");
+                $("#modal").addClass("hide");
+            })
+
+            $("#modal-add-student").click(function () {
+                var name = $("#name").val();
+                var class_id = $("#class_id").val();
+                var gender = $("#gender").val();
+                var data = {"name": name, "class_id": class_id, "gender": gender};
+                // console.log(data);
+                $.ajax({
+                    type: "post",
+                    url: "ajax_add_student",
+                    data: data,
+                    success: function (response) {
+                        response = JSON.parse(response)
+                        if (response.status) {
+                            location.reload();
+                        } else {
+                            $("#errmsg").html(response.errormsg);
+                        }
+                    }
+                });
+            })
+        
+            $(".edit-modal").click(function () {
+                $("#shadow").removeClass("hide");
+                $("#editmodal").removeClass("hide");
+                var tds = $(this).parent().prevAll();
+                var gender = $(tds[0]).text();
+                var class_id = $(tds[1]).attr("classID");
+                var name = $(tds[2]).text();
+                var student_id = $(tds[3]).text();
+                // console.log(gender, class_id, name, student_id);
+                $("#edit-name").val(name);
+                $("#edit-gender").val(gender);
+                $("#edit-class-id").val(class_id);
+                $("#edit-studentID").val(student_id);
+            })
+
+            $("#cancelEdit").click(function () {
+                $("#shadow").addClass("hide");
+                $("#editmodal").addClass("hide");
+            })
+        
+            $("#modal-edit-student").click(function () {
+                var name = $("#edit-name").val();
+                var student_id = $("#edit-studentID").val();
+                var gender = $("#edit-gender").val();
+                var class_id = $("#edit-class-id").val();
+                // console.log(name, student_id, gender, class_id);
+                data = {
+                    "name": name,
+                    "student_id": student_id,
+                    "gender": gender,
+                    "class_id": class_id
+                }
+                $.ajax({
+                    type: "post",
+                    url: "/show/ajax_edit_student",
+                    data: data,
+                    dataType: "json",   // 会将返回值改为字典格式，作用 = JSON.parse(response)
+                    success: function (response) {
+                        if (response.status) {
+                            location.reload();
+                        } else {
+                            $("#errmsg").html(response.errormsg);
+                        }
+                    }
+                });
+
+            })
+        
+        
+        })
+    </script>
+{% endblock js %}

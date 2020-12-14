@@ -1,0 +1,49 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/auctions/auctions",
+		"pages/profile/profile",
+		"pages/message/message",
+		"pages/details/detail",
+		"pages/bind/bind",
+		"pages/login/loogin",
+		"pages/pictures/pictures",
+		"pages/telephone/telephone",
+		"pages/auth/auth",
+		"pages/home/home"
+	],
+	"window": {
+		"navigationBarBackgroundColor": "#FFDAB9",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "微信小程序"
+	},
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/index/ic_menu_choice_nor.png",
+				"selectedIconPath": "static/index/ic_menu_choice_pressed.png"
+			},
+			{
+				"pagePath": "pages/auctions/auctions",
+				"text": "拍卖",
+				"iconPath": "static/index/ic_menu_choice_nor.png",
+				"selectedIconPath": "static/index/ic_menu_choice_pressed.png"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"text": "消息",
+				"iconPath": "static/index/ic_menu_choice_nor.png",
+				"selectedIconPath": "static/index/ic_menu_choice_pressed.png"
+			},
+			{
+				"pagePath": "pages/profile/profile",
+				"text": "我的",
+				"iconPath": "static/index/ic_menu_me_nor.png",
+				"selectedIconPath": "static/index/ic_menu_me_pressed.png"
+			}
+		]
+	},
+	"sitemapLocation": "sitemap.json"
+}

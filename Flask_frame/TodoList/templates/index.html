@@ -1,0 +1,86 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+    首页 
+{% endblock title %} 
+
+
+{% block styles %}
+    {{ super() }}
+    <link href="/static/css/index.css" rel="stylesheet">
+{% endblock styles %}
+
+
+
+{% block body %}
+    {{ super() }}
+    <h3 style="margin-left: 120px;">今日待办事项</h3>
+    <div class="row">
+        <div class="col-md-10">
+        <table class="table table-striped" style="margin-left: 120px;">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>标题</th>
+                <th>类别</th>
+                <th>是否完成</th>
+                <th>创建时间</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td><button class="btn btn-success" type="button">完成</button></td>
+                <td><button class="btn btn-info" type="button">编辑</button><button class="btn btn-danger" type="button">删除</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@fat</td>
+                <td><button class="btn btn-success" type="button">完成</button></td>
+                <td><button class="btn btn-info" type="button">编辑</button><button class="btn btn-danger" type="button">删除</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td><button class="btn btn-success" type="button">完成</button></td>
+                <td><button class="btn btn-info" type="button">编辑</button><button class="btn btn-danger" type="button">删除</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="margin-left: 120px;">
+            <button class="btn btn-info" type="button" id="add-events">添加待办</button>
+            <button class="btn btn-primary" type="button" id="add-kinds" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">添加类别</button>
+        </div>
+            <div id="light" class="white_content">
+                添加待办类别
+                <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">点这里关闭本窗口</a>
+                </br>
+                <form class="form-signin">
+                    类别名:<input type="text" class="form-control" name="kind-name" id="kind-name"/></br>
+                    <input type="submit" value="提交"/>
+                </form>
+            </div>
+			<div id="fade" class="black_overlay"></div>
+		</div>
+        </div>
+    </div>
+{% endblock body %}
+
+
+
+{% block scripts %} 
+{{ super() }}
+<script src="/static/js/index.js"></script>
+{% endblock scripts %}

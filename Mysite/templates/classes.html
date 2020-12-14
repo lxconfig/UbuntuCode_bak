@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link href="/static/css/modal.css" rel="stylesheet">
+{% endblock css %}
+    
+{% block body_content %}
+    <div>
+        <h1>班级信息</h1>
+        <div style="margin: 10px 0;">
+            <a class="btn btn-outline-primary" href="add_class">添加</a>
+            <a class="btn btn-outline-primary" onclick="showModal();">模态框添加</a>
+        </div>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>班级名称</th>
+                    <th>操作</th>
+                    <th>Ajax操作</th>
+                </tr>
+            </thead>
+            {% for class in classes %}
+                <tr>
+                    <td>{{ class.cid }}</td>
+                    <td>{{ class.caption }}</td>
+                    <td>
+                        <a class="fa fa-pencil" href="/show/edit_class?nid={{ class.cid }}">编辑</a>
+                        <a class="fa fa-trash" href="/show/del_class?nid={{ class.cid }}">删除</a>
+                    </td>
+                    <td>
+                        <a onclick="EditModal(this);">对话框编辑</a>
+                        <a>对话框删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="shadow" class="shadowss hide"></div>  <!-- 遮罩层 -->
+    <div id="modal" class="modalss hide">          <!-- 数据层 -->
+        <!-- 如果用form表单提交，则一定会刷新页面 -->
+        <!-- 而ajax提交，不会自己刷新页面 -->
+        <p>
+            班级名称:<input id="title" type="text" name="title" /> <span id="errorMsg" style="color: red;"></span>
+        </p>
+        <input type="button" value="提交" onclick="AjaxSend();" />
+        <input type="button" value="取消" onclick="cancelModal();" />
+    </div>
+    <div id="Editmodal" class="modalss hide">          <!-- 数据层 -->
+        <h3>编辑班级</h3>
+        <p>
+            班级名称:<input id="EditTitle" type="text" name="title" /> <span id="errorMsg" style="color: red;"></span>
+            <input id="EditId" type="text" name="EditId" hidden />
+        </p>
+        <input type="button" value="提交" onclick="AjaxEdit();" />
+        <input type="button" value="取消" onclick="cancelModal();" />
+    </div>
+{% endblock body_content %}
+
+{% block js %}
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/modal.js"></script>
+{% endblock js %}

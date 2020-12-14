@@ -1,0 +1,46 @@
+<!--pages/autions/auctions.wxml-->
+<view class="auction">
+	<!-- 添加绑定事件，实现页面跳转 -->
+	<view class="title" bindtap="clickMe" data-aid="123" >
+		<text>第一场 拍卖会拍卖会拍卖会</text>
+	</view>
+	<!-- 通过标签跳转 -->
+	<navigator url="/pages/details/detail?id=666">通过标签跳转</navigator>
+	<view class="tips">
+		<view>
+			<text>2020-11-5</text>
+		</view>
+		<view>
+			<text>19191次围观</text>
+		</view>
+	</view>
+	<view class="big_image">
+		<image src="/static/index/1.png"></image>
+	</view>
+	<view class="small_image">
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+	</view>
+	<view class="title">
+		<text>第二场 拍卖会拍卖会拍卖会</text>
+	</view>
+	<view class="tips">
+		<view>
+			<text>2020-11-5</text>
+		</view>
+		<view>
+			<text>19191次围观</text>
+		</view>
+	</view>
+	<view class="big_image">
+		<image src="/static/index/1.png"></image>
+	</view>
+	<view class="small_image">
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+		<image src="/static/index/1.png"></image>
+	</view>
+</view>
